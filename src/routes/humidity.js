@@ -1,9 +1,12 @@
 import express from 'express';
+import {
+    getAllHumidityMeasurements,
+    getHumidityMeasurementById,
+} from '../controllers/humidityController.js'
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('Hello from humidity!');
-});
+router.get('/', getAllHumidityMeasurements);
+router.get('/:id', getHumidityMeasurementById);
 
 export default router;
