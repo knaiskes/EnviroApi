@@ -6,7 +6,7 @@ import {
 
 const router = express.Router();
 
-router.get('/', getAllTemperatureMeasurements);
-router.get('/:id', getTemperatureMeasurementById);
+router.get('/temperature', getAllTemperatureMeasurements);
+router.get('/temperature/:id', getTemperatureMeasurementById);
 
 export default router;

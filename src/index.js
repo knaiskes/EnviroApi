@@ -4,8 +4,10 @@ import humidityRoutes from './routes/humidity.js';
 
 const app = express();
 
-app.use('/temperature', temperatureRoutes);
-app.use('/humidity', humidityRoutes);
+const version = '/api/v1';
+
+app.use(version, temperatureRoutes);
+app.use(version, humidityRoutes);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

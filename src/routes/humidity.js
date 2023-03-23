@@ -6,7 +6,7 @@ import {
 
 const router = express.Router();
 
-router.get('/', getAllHumidityMeasurements);
-router.get('/:id', getHumidityMeasurementById);
+router.get('/humidity', getAllHumidityMeasurements);
+router.get('/humidity/:id', getHumidityMeasurementById);
 
 export default router;
