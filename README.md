@@ -12,7 +12,7 @@ Clone the project
 $ git clone git@github.com:knaiskes/EnviroApi.git
 ```
 
-Start project with docker-compose
+Start the project with docker-compose
 
 ```
 $ cd EnviroApi/
