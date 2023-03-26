@@ -21,7 +21,17 @@ const getHumidityMeasurementById = async (req, res) => {
     }
 }
 
+const getLatestHumidityMeasurementRecord = async (req, res) => {
+    try {
+	const result = await pool.query(`SELECT humidity FROM dht22 ORDER BY timestamp DESC LIMIT 1`);
+	res.status(200).json(result.rows);
+    } catch (err) {
+	console.error('There has been an error latest: ', err.stack);
+    }
+}
+
 export {
     getAllHumidityMeasurements,
     getHumidityMeasurementById,
+    getLatestHumidityMeasurementRecord,
 };
