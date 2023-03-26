@@ -21,7 +21,17 @@ const getTemperatureMeasurementById = async (req, res) => {
     }
 }
 
+const getLatestTemperatureMeasurementRecord = async (req, res) => {
+    try {
+	const result = await pool.query(`SELECT temperature FROM dht22 ORDER BY timestamp DESC LIMIT 1`);
+	res.status(200).json(result.rows);
+    } catch (err) {
+	console.error('There has been an error latest: ', err.stack);
+    }
+}
+
 export {
     getAllTemperatureMeasurements,
     getTemperatureMeasurementById,
+    getLatestTemperatureMeasurementRecord,
 };
